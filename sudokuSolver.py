@@ -31,6 +31,7 @@ def solve(grid, row, col, num):
         for j in range(3):
             if grid[i + startRow][j + startCol] == num:
                 return False
+
     return True
  
 # creating a function to check the correct answer 
@@ -46,7 +47,6 @@ def Suduko(grid, row, col):
     for num in range(1, 9 + 1, 1): 
      
         if solve(grid, row, col, num):
-         
             grid[row][col] = num
             if Suduko(grid, row, col + 1):
                 return True
